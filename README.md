@@ -39,13 +39,21 @@ Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, fa
 • O maior valor de faturamento ocorrido em um dia do mês;<br>
 • Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
 
-#### Resultado
+#### Resultado JSON
 ```
-Menor valor de faturamento: R$ 19848.53
-Maior valor de faturamento: R$ 67836.43
-Número de dias com faturamento acima da média: 2
+Menor valor de faturamento: R$ 373,78
+Maior valor de faturamento: R$ 48.924,24
+Número de dias com faturamento acima da média: 10
 ```
 [Código](https://github.com/GSantospy/Target-Estagio/blob/main/tecnica_3.py)
+
+#### Resultado XML
+```
+Menor valor de faturamento: R$ 3.071,33
+Maior valor de faturamento: R$ 48.275,30
+Número de dias com faturamento acima da média: 11
+```
+[Código](https://github.com/GSantospy/Target-Estagio/blob/main/tecnica_3-2.py)
 
 
 

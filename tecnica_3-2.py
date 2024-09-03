@@ -1,13 +1,13 @@
-import json
+import xml.etree.ElementTree as ET
 import locale
 
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
-with open('tecnica_3.json') as f:
-    dadosFaturamento = json.load(f)
+tree = ET.parse('tecnica_3-2.xml')
+root = tree.getroot()
 
 def Faturamento(data):
-    faturamentoDiario = [dia["valor"] for dia in data if dia["valor"] > 0]
+    faturamentoDiario = [float(dia.find("valor").text) for dia in data if float(dia.find("valor").text) > 0]
 
     if not faturamentoDiario:
         return 'Não há dias com faturamento.'
@@ -23,7 +23,7 @@ def Faturamento(data):
         "acimaDaMedia": acimaMedia
     }
 
-resultado = Faturamento(dadosFaturamento)
+resultado = Faturamento(root)
 print(f"""
 Menor valor de faturamento: {locale.currency(resultado['menorFaturamento'], grouping=True)}
 Maior valor de faturamento: {locale.currency(resultado['maiorFaturamento'], grouping=True)}
